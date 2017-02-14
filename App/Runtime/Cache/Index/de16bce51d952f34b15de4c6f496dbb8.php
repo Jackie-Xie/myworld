@@ -1,0 +1,206 @@
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--[if IE 6]>
+<meta http-equiv="refresh" content="0;url=ie6.html">
+<![endif]-->
+<meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=edge">
+<title>清风音乐电台-尽享音乐生活</title>
+<meta content="清风在线电台,清风音乐电台,清风网页播放器,清风网页音乐播放器,音清风乐播放器,高品质mp3下载,在线试听,在线听歌,歌曲同步,音乐试听" name="keywords">
+<meta content="清风在线电台,清风音乐电台,清风网页音乐播放器,音乐,清风音乐播放器,高品质mp3下载,在线试听,在线听歌，是最强大的网页音乐播放器。" name="description">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="__PUBLIC__/styles/login.css">
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/musicjs/seed.js" data-page="index" data-version="4.5.8" data-fixed="true"></script>
+<script src="__PUBLIC__/musicjs/menu.js" data-page="index" data-version="4.5.8" data-fixed="true"></script>
+<script>
+	Ttpod.config.url = 'http://'+window.location.host+'/';
+	Ttpod.config.name = '清风电台';
+	Ttpod.config.site = 'dongtingundefined';
+	Ttpod.config.defaultNav = 'plaza';
+</script>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/styles/index.css">
+</head>
+<body>
+<div id="radiobg" class="bgContainer">
+	<script data-fixed="true">!function(){document.write('<img id="radiobgImg" alt="电台" src="'+decodeURIComponent((document.cookie.match(new RegExp("(^| )bgSrc=([^;]*)(;|$)"))||["","",Ttpod.config.path.bg])[2])+'" />')}();</script>
+</div>
+<div id="page">
+	<div id="header">
+		<div class="head fix">
+			<div class="left">
+				<h1 class="logo"><a class="logoLink" href="<?php echo U(GROUP_NAME . '/Music/index');?>"><span>清风音乐电台</span></a></h1>
+				<div id="searchBar" class="search">
+					<div class="inner">
+						<input type="text" class="searchBox" dele="" value="" x-webkit-speech placeholder="搜索歌名或歌手" maxlength="20"><input type="button" class="searchButton">
+						<ul class="missWord">
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="right fix">
+				<div id="nav" class="nav">
+					<ul class="fix">
+						<li><a href="#a=plaza" data-tabkey="plaza">音乐广场<i></i></a></li>
+						<li><a href="#a=taglist" data-tabkey="taglist">分类歌曲</a></li>
+						<li><a href="<?php echo U(GROUP_NAME . '/Index/index');?>">我的首页</a></li>
+						<li><a href="<?php echo U(GROUP_NAME . '/Blog/index');?>">博客首页</a></li>
+						<li><a href="<?php echo U(GROUP_NAME . '/Hobby/index');?>">爱好首页</a></li>
+						<li><a href="<?php echo U(GROUP_NAME . '/About/index');?>">关于我</a></li>
+						<li><a href="<?php echo U(GROUP_NAME . '/Feedback/index');?>">联系我</a></li>
+					</ul>
+				</div>
+				<div class="otherBar">
+					<div id="skinTool" class="icon">
+						<a class="skin" title="换肤"></a>
+						<div class="skinList">
+							<ul class="fix">
+							</ul>
+						</div>
+					</div>
+					<!--<a id="btnFeedback" class="feedback" title="用户反馈"></a>-->
+				</div>
+				<!--<div id="userInfo" class="userDataBox">
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		<div id="pageTitle">
+			<div id="subTitle" class="pageTitle">
+				<a class="btnBack" title="返回">返回</a><span class="title"></span>
+			</div>
+			<div id="searchTitle" class="pageTitle">
+				<a class="btnBack" title="返回">返回</a><span class="title"></span>
+			</div>
+		</div>
+		<div id="aside">
+			<div class="player">
+				<div class="message">
+					<h2 id="p_songName" class="song">歌曲名</h2>
+					<span id="p_singerName" class="singer">歌手名 - 专辑名</span>
+				</div>
+				<div class="picTools">
+					<div class="wrap">
+						<div class="album">
+						</div>
+						<img id="p_singerPic" src="__PUBLIC__/styles/images/defaultSinger-5d99da.jpg" alt="">
+						<div class="dvd">
+						</div>
+						<span><a class="refreshPic" href="javascript:void(0);" title="刷新歌手图片"></a><a class="picError" href="javascript:void(0);" title="歌手图片报错"></a></span>
+					</div>
+					<div class="handle">
+						<!--<a id="heart" class="heart" title="收藏"></a><a id="p_download" class="download" title="下载"></a>--><a id="p_mode" data-mode="0" class="repeat" title="循环播放"></a>
+						<div id="J_shareWrap" class="shareWrap fix">
+							<a class="share" title="分享"></a>
+							<div class="bdsharebuttonbox" data-tag="shareSong">
+								<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+							</div>
+						</div>
+						<a id="p_mute" class="horn" title="静音"><span id="p_volume" title="音量"><span class="volumeBg"><span><span class="volumeFg"><span></span></span></span></span></span></a>
+					</div>
+				</div>
+				<div class="lyrics" onselectstart="return!1">
+					<div id="lyricArea">
+					</div>
+					<hr>
+					<p>
+						好音质，清风电台					</p>
+					<div class="foo">
+						<a class="lyricSearchBtn" title="歌词搜索" href="javascript:void(0);"></a><a class="lyricTimeUp" title="歌词延后0.5秒" href="javascript:void(0);"></a><a class="lyricTimeReset" title="歌词重置" href="javascript:void(0);"></a><a class="lyricTimeDown" title="歌词提前0.5秒" href="javascript:void(0);"></a><a id="p_kokSwitch" class="kokOn" title="卡拉ok歌词" href="javascript:void(0);"></a><a class="lyricErrorTip" title="歌词报错" href="javascript:void(0);"></a>
+					</div>
+				</div>
+				<div class="bottomWrap">
+					<div class="progress">
+						<p class="progressTip">
+							正在缓冲中...
+						</p>
+						<span id="bufferBar" class="buffer"><span></span></span><span id="currTimeBar" class="reach"><span><span id="cursor" class="cursor"></span></span></span><span id="currTime" class="partTime">00:00</span><span id="totalTime" class="allTime">00:00</span>
+					</div>
+					<div class="playWrap">
+						<a id="p_pre" class="forward" title="上一首(Ctrl + ←)"></a><a id="p_play" class="play" title="播放(空格)"></a><a id="p_next" class="back" title="下一首(Ctrl + →)"></a><a id="btnListNew" class="listNew"></a>
+					</div>
+				</div>
+			</div>
+			<div style="display:none" id="listNew">
+				<div class="menu">
+					<a class="tempList active"><span class="state"></span>播放列表</a><!--<a class="redList"><span class="state"></span> 红心列表</a>--><a class="close"></a>
+				</div>
+				<div class="list">
+					<ul id="tempListContent">
+					</ul>
+					<ul id="redListContent">
+					</ul>
+				</div>
+				<div class="tempListTip">
+				</div>
+				<div id="tempListFooter" class="toolsBar">
+					<div class="inner">
+						<a class="toolCkeckAll" href="javascript:;">全选</a><!--<a class="toolAddItem disabled" href="javascript:;">收藏</a>--><a class="toolDelItem disabled" href="javascript:;">删除</a>
+						<div class="numWrap">
+							共有 <span>0</span> 首
+						</div>
+					</div>
+				</div>
+				<div id="redListFooter" class="toolsBar">
+					<div class="inner">
+						<div class="numWrap">
+							共有 <span>0</span> 首
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="asideShade">
+			</div>
+		</div>
+		<div id="mainShade" style="display:none">
+		</div>
+		<div id="main">
+			<a id="anchorTop" class="anchorTop"></a>
+		</div>
+		<div id="footer">
+			<p class="recordInfo" style="color:#fff;">
+				Copyright &copy 2015-2016 Jackie Xie. All rights reserved. 
+			</p>
+		</div>
+		<div id="audioPlayer">
+		</div>
+	</div>
+</div>
+<div id="contextMenu" >
+	<div class="menuTip verticalRoate">
+		电台网页版
+	</div>
+	<div class="menuContent">
+		<p>
+			<a data-choice="play"><span>播放/暂停（空格）</span></a><a data-choice="prev"><span>上一曲（Ctrl + ←）</span></a><a href="javascript:void(0);" data-choice="next"><span>下一曲（Ctrl + →）</span></a>
+		</p>
+		<p>
+			<a data-choice="volumePlus"><span>增大音量（Ctrl + ↑）</span></a><a data-choice="volumeMinus"><span>减小音量（Ctrl + ↓）</span></a>
+		</p>
+		<div>
+			<span class="arrow"></span><a><span>播放模式</span></a>
+			<ul>
+				<li><span class="choosed">√</span><a data-choice="repeat">列表循环</a></li>
+				<li><span>√</span><a data-choice="repOne">单曲循环</a></li>
+				<li><span>√</span><a data-choice="order">顺序播放</a></li>
+				<li><span>√</span><a data-choice="random">随机播放</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="scripts">
+	<script src="__PUBLIC__/musicjs/fly.js"></script>
+	<script src="__PUBLIC__/musicjs/jobs.js"></script>
+</div>
+<script type="text/javascript" charset="UTF-8" src="__PUBLIC__/musicjs/auto.js"></script>
+<script>Ttpod.main.init();</script>
+</body>
+</html>

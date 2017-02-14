@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>博文回收站</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.3.3.5.min.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/main_table.css" />
+	<link rel="stylesheet" href="__PUBLIC__/css/page.css">
+
+</head>
+
+<body>
+	<div class="table-section">
+		<p><span class="icon-eye-open">&nbsp</span>博文回收站</p>
+		<table class="mc-table mc-table-striped mc-table-hover mc-table-prev">
+			<thead>
+				<tr>
+			 		<th class="w1f">AID</th>
+			 		<th class="w2f">标题</th>
+			 		<th class="w4f">博客分类</th>
+			 		<th class="w4f">摘要</th>
+			 		<th class="w4f">查看次数</th>
+			 		<th class="w4f">是否置顶</th>
+			 		<th class="w4f">创作时间</th>
+			 		<th class="w6f center">操作</th>
+		 	</thead>
+	 		<tbody>
+				<foreach name='list' item='articles'>
+					<tr>
+						<td>{$articles.aid}</td>
+						<td>{$articles.title}</td>
+						<td>{$articles.category.cname}</td>
+						<td>{$articles.summary}</td>
+						<td>{$articles.click}</td>
+						<td>{$articles.istop}</td>
+						<td>{$articles.time}</td>
+						<td class="center">
+							<a href="{:U( GROUP_NAME .'/Article/recover',array('aid'=> $articles[aid]))}" class="recover">[恢复]</a>
+							<a href="{:U( GROUP_NAME .'/Article/del',array('aid'=> $articles[aid]))}" class="del">[删除]</a>
+						</td>
+					</tr>
+				</foreach>
+			</tbody>
+		</table>
+	</div>
+	<div class="manu page">
+		{$page}
+	</div>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.3.3.5.min.js"></script>
+	<script src="__PUBLIC__/js/public.js"></script>	
+</body>
+</html>

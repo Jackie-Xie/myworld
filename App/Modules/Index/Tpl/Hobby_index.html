@@ -1,0 +1,79 @@
+<include file="./App/Modules/Index/Tpl/common/header.html" />
+<div id="main_content"> 
+  	<div id="hobby_poster">
+		<div class="J_Poster poster-main" data-setting='{
+		                       "width":1000,
+		                       "height":320,
+		                       "posterWidth":640,
+		                       "posterHeight":320,
+		                       "scale":0.85,
+		                       "autoPlay":true,
+		                       "delay":2000,
+		                       "speed":500,
+		                       "verticalAlign":"middle"		                       
+		}'>
+			<div class="poster-btn poster-prev-btn"></div>
+			<ul class="poster-list">
+				<foreach name="hobby" item="vo">
+					<li class="poster-item"><a href="#"><img src="{$vo.posturl}" alt="{$vo.name}" width="100%"/><span class="poster-des">{$vo.name}<p>{$vo.content}</p></span></a></li>
+				</foreach>			
+			</ul>
+			<div class="poster-btn poster-next-btn"></div>
+		</div>
+	</div>
+     <div id="hobby_content">
+     	<ul class="photo_list">
+     	    <foreach name="hobby" item="vol">
+     	    	<foreach name="vol['picture']" item="v">
+		     		<li class="photo_item">
+		     			<a href="#" id="J_link">
+			     			<img src="{$v.pUrl}" alt-="{$v.pname}" width="100%" id="J_picture"/>
+			     			<h4>{$v.pname}</h4>
+		     			</a>
+		     		</li>
+	     		</foreach>
+     		</foreach>
+     	</ul>
+     </div>         
+</div>
+<script>
+	$(function(){
+		var link = '',
+			temp = $('#J_picture').attr('src').replace(/[^0-9]/ig, "");
+		var num=parseInt(temp);
+		if(num==1){
+			link="http://www.iqiyi.com/lib/m_208282514.html?src=search";
+			
+		}else if(num==2){
+			link="http://www.iqiyi.com/lib/m_209067614.html?src=search";
+		}else if(num==3){
+			link="http://www.iqiyi.com/a_19rrhaen1h.html#vfrm=2-3-0-1";
+		}else if(num==4){
+			link="http://www.iqiyi.com/a_19rrhaft45.html#vfrm=2-3-0-1";
+		}else if(num==5){
+			link="http://www.iqiyi.com/lib/m_200054014.html?src=search";
+		}else if(num==6){
+			link="http://www.iqiyi.com/lib/m_200051714.html?src=search";
+		}else if(num==7){
+			link="http://www.iqiyi.com/a_19rrhb5gz1.html#vfrm=2-3-0-1";
+		}else if(num==8){
+			link="http://www.iqiyi.com/a_19rrhak911.html#vfrm=2-3-0-1";
+		}else if(num==9){
+			link="http://www.iqiyi.com/lib/m_209952314.html?src=search";
+		}else if(num==10){
+			link="http://www.iqiyi.com/a_19rrhah50x.html#vfrm=2-3-0-1";
+		}else if(num==11){
+			link="http://www.iqiyi.com/a_19rrha9c9d.html#vfrm=2-3-0-1";
+		}else if(num==12){
+			link="http://www.iqiyi.com/lib/m_209822614.html?src=search";
+		}
+
+		$('#J_link').attr('href',link);
+	})
+</script>
+
+  <!--内容区域结束 -->
+<include file="./App/Modules/Index/Tpl/common/footer.html" />  
+
+
+

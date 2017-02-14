@@ -1,0 +1,55 @@
+<footer> 
+	<!-- 页尾开始 -->
+		<div id="foot-item">			
+	    <ul class="share-group">
+	        <li><a href="http://www.qq.com"><i class="icomoon qq"></i></a></li>
+	        <li><a href="https://wx.qq.com/"><i class="icomoon weixin"></i></a></li>
+	        <li><a href="https://twitter.com/"><i class="icon-twitter"></i></a></li>
+	        <li><a href="http://www.in66.com/"><i class="icon-linkedin"></i></a></li>
+	        <li><a href="https://www.facebook.com/"><i class="icon-facebook"></i></a></li>
+	        <li><a href="https://www.google.com/"><i class="icon-google-plus"></i></a></li>
+	        <li><a href="https://github.com/"><i class="icon-github"></i></a></li>
+	    </ul>
+	<div class="copy">
+		Copyright &copy 2015-2016 Jackie Xie. All rights reserved.
+	</div>
+	</div>
+	</footer> 
+	<!-- 页尾结束 -->
+
+	<div class="toolbar">
+	<!-- toolbar开始 -->
+		<a href="javascript:;" class="toolbar-item toolbar-item-weixin">
+			<span class="toolbar-btn"></span>
+		</a>
+		<a href="{:U(GROUP_NAME . '/Feedback/index')}" class="toolbar-item toolbar-item-feedback">
+			<span class="toolbar-btn"></span>
+		</a>
+		<a href="javascript:;" class="toolbar-item toolbar-item-qq">
+			<span class="toolbar-btn"></span>
+		</a>
+		<a id="backTop" href="javascript:;" class="toolbar-item toolbar-item-top">
+			<span class="toolbar-btn"></span>
+		</a>
+	</div>
+	<!-- toolbar结束 -->
+ </div>
+ <!-- container结束 -->
+ 
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__PUBLIC__/js/myBlog.js"></script>
+	<script src="__PUBLIC__/js/require.js" data-main="__PUBLIC__/js/toolbar-main"></script>	
+	<script src="__PUBLIC__/js/focus-photo.js"></script>
+    <script  src="__PUBLIC__/js/carrousel.js"></script>
+	<script  src="__PUBLIC__/js/comment.js"></script>    
+	<script>
+	    //轮播图初始化
+	    $(function(){
+	        //carrousel
+	        // var c = new Carrousel($(.J_Poster));
+	        Carrousel.init($(".J_Poster"));
+
+	    });
+	</script>
+</body>
+</html>

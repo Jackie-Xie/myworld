@@ -1,0 +1,30 @@
+  <include file="./App/Modules/Index/Tpl/common/header.html" />
+  <!-- 内容区域开始 -->
+  <div class="article-list-content">
+
+	<!-- 发布内容区域 -->
+	<div id="arc">
+		<!-- 左侧区域 -->
+		<div class="arc_left_box_list">
+			<ul class="article_list">
+				<li class="category">文章列表</li>
+				<foreach name='top' item='tops'>
+					<li><a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $tops['aid']))}" class="istop">{$tops.title}</a><em>{$tops.time|date='Y-m-d',###}</em></li>
+				</foreach>
+				<foreach name='bottom' item='bottoms'>
+					<li><a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $bottoms['aid']))}">{$bottoms.title}</a><em>{$bottoms.time|date='Y-m-d',###}</em></li>
+				</foreach>
+			</ul>
+			<div class="manu page">
+				{$page}
+			</div>
+		</div>
+		<!-- 左侧区域结束 -->
+		<!-- 右侧区域开始 -->
+		<include file="./App/Modules/Index/Tpl/common/right_side.html" />
+		<!-- 右侧区域结束 -->
+	</div>
+	<!-- 发布内容区域结束 -->
+ </div>
+  <!--内容区域结束 -->
+	<include file="./App/Modules/Index/Tpl/common/footer.html" />

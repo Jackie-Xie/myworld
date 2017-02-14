@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=edge">
+	<title>清风博客-我的博客</title>
+	<meta name="keywords" content="博客，个性化，分享知识，互相学习" />
+	<meta name="description" content="这是我的个人博客，为了将自己的见解与大家交流切磋，互相学习。这也是总结、积累并分享知识的一个平台。" />
+	<link  rel="stylesheet"  href="__PUBLIC__/css/normalize.css" />
+	<link  rel="stylesheet"  href="__PUBLIC__/css/font-awesome.min.css" />
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="__PUBLIC__/css/font-awesome-ie7.min.css">
+	<![endif]-->
+	<link rel="stylesheet" href="__PUBLIC__/css/myBlog.css" />
+	<link  rel="stylesheet"  href="__PUBLIC__/css/article.css" />
+	<link  rel="stylesheet"  href="__PUBLIC__/css/article_list.css" />
+	<link rel="stylesheet" href="__PUBLIC__/css/about.css" />
+	<link rel="stylesheet" href="__PUBLIC__/css/myHobby.css" />
+	<link rel="stylesheet" href="__PUBLIC__/css/page.css" />
+	<link rel="shortcut icon"  href="__PUBLIC__/images/logo-short.png" />
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script>
+		$(function(){
+			if($.trim($('#login').text()) == '登录') {
+				$('#login').attr('href',"{:U(GROUP_NAME . '/Login/index')}");
+			}else{
+				$('#login').removeClass("href");
+			}
+		})
+	</script>
+</head>
+<body>
+<div id="container">
+	<!-- 头部开始 -->
+	<header>
+		<div id="header_content">
+	<!-- 头部左侧 -->
+		<div id="header_left">
+			<div id="logo"></div>
+		</div>
+		<!-- 头部右侧 -->
+		<div id="header_right">
+			 <div class="blog_login"><a  id="logout" href="{:U(GROUP_NAME . '/Login/logout')}"><i class="icon-remove-sign"></i>&nbsp注销</a><a id="login" style="text-decoration:none;color:#666"><i class="icon-user"></i>&nbsp<?php if($username=session('username')){echo $username;} else{echo '登录';} ?></a></div>
+		</div>
+		</div>	
+	</header>
+	<!-- 头部结束 -->
+	<nav>
+	<!-- 导航条开始 -->
+	   <div id="navid">
+		<ul>
+			<li><a href="{:U(GROUP_NAME . '/Index/index')}">首页</a></li>
+			<li class="active"><a href="{:U(GROUP_NAME . '/Blog/index')}">博客</a></li>
+			<li><a href="{:U(GROUP_NAME . '/Category/index')}">栏目</a></li>
+			<li><a href="{:U(GROUP_NAME . '/Article/articleList')}">博文</a></li>
+			<li><a href="{:U(GROUP_NAME . '/Hobby/index')}">爱好</a></li>
+			<li><a href="{:U(GROUP_NAME . '/Music/index')}">音乐</a></li>
+			<li><a href="{:U(APP_PATH. '/Admin/Login')}">管理</a></li>
+			<li><a href="{:U(GROUP_NAME . '/About/index')}">关于我</a></li>
+			<li><a href="{:U(GROUP_NAME . '/Feedback/index')}">联系我</a></li>
+		</ul>
+		<div class="top_search">
+			<form action="http://www.baidu.com/" method="get" name="search_top" id="formtop" target="_blank">
+                <div class="search-input-area"> 
+                <span class="hidden">搜索</span>
+                <input type="text" name="search" id="searchInput_top" value="请输入关键词" onBlur="if(this.value==''){this.value='请输入关键词';this.style.color='#D1D1D1'}" style="color: #d1d1d1" onFocus="if(this.value=='请输入关键词'){this.value='';this.style.color='#000'}" class="textBox ">
+                <input type="submit" name="Submit" value="" tabindex="0" title="搜索" class="search-logo" id="sb_form_go">
+                </div>
+            </form>
+		</div>
+	   </div>
+	</nav>
+	<!-- 导航条结束 -->	

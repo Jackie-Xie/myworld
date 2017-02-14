@@ -1,0 +1,51 @@
+
+/*页尾开始*/
+footer
+{
+	background: transparent;
+}
+
+footer #foot-item
+{
+	background: #F8F8F8;
+	text-align: center;
+	color: #444;
+	min-height: 80px;
+	font-size: 18px;
+	border-top: 1px solid #DDD;
+}
+
+
+ul.share-group
+{
+	display: block;
+	width: 800px;
+    margin: 0 auto;
+    padding: 8px;
+}
+
+.share-group li
+{
+	display: inline-block;
+	padding: 8px 20px;
+	cursor:pointer;
+}
+
+.share-group li a
+{
+	color: #444;
+}
+
+.share-group li a:hover
+{
+	color: rgb(247,148,30);
+}
+
+.copy
+{
+	font-size: 12px;
+	margin-top: 10px;
+	padding-bottom: 15px;
+}
+
+/*页尾结束*/

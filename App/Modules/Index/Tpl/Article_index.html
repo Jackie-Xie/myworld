@@ -1,0 +1,105 @@
+  <include file="./App/Modules/Index/Tpl/common/header.html" />
+  <!-- 内容区域开始 -->
+  <div class="article-content">
+
+	<!-- 发布内容区域 -->
+	<div id="arc" >
+		<!-- 左侧区域 -->
+		<div class="arc_left_box_read">
+			<div class="arc_show_read">
+				<h2>文章阅读</h2>
+				<b>
+					<span>创作于：</span>
+					<span class="red">{$article.time|date='Y-m-d',###}&nbsp&nbsp</span>
+					<span>栏目：</span>
+					<span class="red">{$cat.bname}&nbsp&nbsp</span>
+					<span>阅读：</span>
+					<span class="red">{$article.click}</span>
+				</b>
+				
+			</div>
+			<div class="arc_left_read">
+
+				<div class="arc_left_content">
+					<p class="arc_tittle_read">{$article.title}</p>
+					<div class="arc_read">{$article.content|htmlspecialchars_decode=###}</div>
+				</div>
+			</div>
+			<!-- 用户留言区域 -->
+			<div id="msg_read">
+				<p id="msg_tittle">用户评论</p>
+				<ul id="com_list">
+					<foreach name="comm" item="comms">
+					<li>
+						<b>{$comms.comid}楼</b>&nbsp&nbsp&nbsp&nbsp
+						<span>{$comms.user.username}</span>&nbsp&nbsp&nbsp&nbsp
+						<em>{$comms.time|date="Y-m-d",###}</em>
+						<br />
+						<p>{$comms.content}</p>
+						<div style="display:block;padding:5px 20px;">
+							<b style="color:#888">回复</b>&nbsp&nbsp&nbsp&nbsp
+							<p style="display:inline-block;font-size:12px">{$comms.reply}</p>
+						</div>
+					</li>
+					<br />
+					</foreach>
+				</ul>
+			</div>
+			<div class="manu page">
+				{$page}
+			</div>
+			<!-- 用户留言区域结束 -->
+
+			<!-- 用户发布留言区域 -->
+			<div id="send_content">
+				<p id="msg">发表评论</p>
+				<form>
+					<table class="table">
+						<tr>
+							<td>
+								<span style="display:inline-block;width:10em;height:2em;text-align:center;" name="username" id="J_username" data-uid="{$Think.session.uid}" data-aid="{$article.aid}"/>{$Think.session.username}</span>&nbsp&nbsp&nbsp&nbsp昵称(必填)<span class="star">*</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="text" name="verify" id="J_verify" style="display:inline-block;width:10em;height:3em;text-align:left;"/>
+								<a href="javascript:void(change_code(this));">
+									<img src="{:U(GROUP_NAME . "/Login/verify")}" alt="验证码" id="verify_img"/>
+								</a>&nbsp&nbsp验证码(必填)<span class="star">*</span>
+							</td>
+							<script>
+								//改变验证码
+								 var URL = '{:U(GROUP_NAME . "/Login/verify")}/';
+								 function change_code(obj){
+								 	$('#verify_img').attr("src",URL + Math.random());
+								 	return false;
+								 }
+								 //发布评论的地址
+								 var handleUrl ="{:U(GROUP_NAME . '/Article/comment_handle')}";
+							 </script>
+						</tr>
+						<tr id="error_msg">
+						</tr>
+						<tr>
+							<td><textarea name="content" id="contents" onBlur="if(this.innerHTML==''){this.innerHTML='文明上网，理性发言！';this.style.color='#D1D1D1'}" style="color: #d1d1d1" onFocus="if(this.innerHTML=='文明上网，理性发言！'){this.innerHTML='';this.style.color='#000'}">文明上网，理性发言！</textarea></td>
+						</tr>
+						<tr>
+							<td>
+								欢迎参与讨论，请在这里发表您的看法、交流您的观点。
+								<input type="button" value="提交评论" id="sub"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<!-- 用户发布留言区域结束 -->
+		</div>
+		<!-- 左侧区域结束 -->
+		<!-- 右侧区域开始 -->
+		<include file="./App/Modules/Index/Tpl/common/right_side.html" />
+		<!-- 右侧区域结束 -->
+	</div>
+	<!-- 发布内容区域结束 -->
+ </div>
+  <!--内容区域结束 -->
+	<include file="./App/Modules/Index/Tpl/common/footer.html" />

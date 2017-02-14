@@ -1,0 +1,70 @@
+<div class="arc_right_box">
+	<!-- 关于我 -->
+	<div class="right_little_box">
+		<p class="right_tittle">我的标签</p>
+		<img src="__PUBLIC__/images/myPhoto.jpg" alt="Loading..." id="myPhoto"/>
+		<ul class="right_des">
+			<li>Html5</li>
+			<li>Web前端</li>
+			<li>Java开发</li>
+			<li>PHP开发</li>
+			<li>Android开发</li>
+		</ul>
+	</div>
+	<!-- 关于我 -->
+
+	<!-- 栏目列表 -->
+	<div class="right_little_box">
+		<p class="right_tittle">栏目列表</p>
+		
+		<ul class="right_category">
+			<volist name="cats" id="vo">
+				<li><a href="{:U(GROUP_NAME . '/Category/index',array('cid'=> $vo['cid']))}">{$vo.cname}</a></li>
+			</volist>
+		</ul>
+	</div>
+	<!-- 栏目列表结束 -->
+	<!-- 最新文章 -->
+	<div class="right_arc_little_box">
+		<p class="right_tittle">最新文章</p>
+		<div class="hot_arc">
+			<div class="arc_js_move">
+				<div class="right_roll">
+					<ul class="right_des">
+						<volist name="arts" id="v">
+							<li><a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $v['aid']))}">{$v.title}</a></li>
+						</volist>
+					</ul>
+				</div>
+				<div class="right_roll">
+					<ul class="right_des">
+						<volist name="arts" id="v">
+							<li><a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $v['aid']))}">{$v.title}</a></li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 最新文章结束 -->
+	<!-- 最新回复 -->
+	<div class="right_little_box">
+		<p class="right_tittle">最新回复</p>
+		<ul class="right_answer">
+			<volist name="coms" id="vol">
+				<li><a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $vol['article']['aid']))}">{$vol.content}</a></li>
+			</volist>
+		</ul>
+	</div>
+	<!-- 最新回复结束 -->
+	<!-- 结果统计 -->
+	<div class="right_little_box">
+		<p class="right_tittle">站点统计</p>
+		<ul class="count_bg">
+			<li>文章总数：<span>7篇</span></li>
+			<li>回复总数：<span>10条</span></li>
+			<li>浏览总数：<span>520次</span></li>
+		</ul>
+	</div>
+	<!-- 结果统计结束 -->
+</div>

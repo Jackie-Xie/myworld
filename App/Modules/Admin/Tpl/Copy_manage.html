@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.3.3.5.min.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="__PUBLIC__/css/main_table.css" />
+	<link rel="stylesheet" href="__PUBLIC__/css/page.css">
+	
+</head>
+
+<body>
+	<div class="table-section">
+		<p><span class="icon-group">&nbsp</span>前端用户列表</p>
+		<table class="mc-table mc-table-striped mc-table-hover mc-table-prev">
+			<thead>
+				<tr>
+			 		<th class="w2f">ID</th>
+			 		<th class="w3f">用户名</th>
+			 		<th class="w4f">电子邮箱</th>
+			 		<th class="w4f">手机号码</th>
+			 		<th class="w4f">注册时间</th>
+			 		<th class="w4f">注册IP</th>
+			 		<th class="w6f">最近登录时间</th>
+			 		<th class="w6f">最近登录IP</th>
+					<th class="w4f">是否锁定</th>
+			 		<th class="w4f center">操作</th>
+			 	</tr>
+		 	</thead>
+	 		<tbody>
+				<foreach name='select' item='user'>
+					<tr>
+						<td>{$user.uid}</td>
+						<td>{$user.username}</td>
+						<td>{$user.email}</td>
+						<td>{$user.mobile}</td>
+						<td>{$user.regtime}</td>
+						<td>{$user.regip}</td>
+						<td>{$user.lastdate}</td>
+						<td>{$user.lastip}</td>
+						<td>{$user.islock}</td>
+						<td class="center">
+							<a href="{:U( GROUP_NAME .'/Copy/delete',array('uid'=> $user[uid]))}" class="del">[删除]</a>
+							<a href="{:U( GROUP_NAME .'/Copy/lock',array('uid'=> $user[uid]))}" class="lock">[锁定]</a>
+							<a href="{:U( GROUP_NAME .'/Copy/open',array('uid'=> $user[uid]))}" class="open">[解锁]</a>
+						</td>
+					</tr>
+				</foreach>
+			</tbody>
+		</table>
+	</div>
+	<div class="manu">
+		{$page}
+	</div>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.3.3.5.min.js"></script>
+	<script src="__PUBLIC__/js/public.js"></script>		
+</body>
+</html>

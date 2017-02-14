@@ -1,0 +1,249 @@
+﻿@font-face {
+  font-family: 'icomoon';
+  src: url("../font/icomoon.eot?6fees3");
+  src: url("../font/icomoon.eot?6fees3#iefix") format("embedded-opentype"), url("../font/icomoon.ttf?6fees3") format("truetype"), url("../font/icomoon.woff?6fees3") format("woff"), url("../font/icomoon.svg?6fees3#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+#container{
+	position: relative;
+	top:0;
+	left:0;
+	font-family:"微软雅黑" "Microsoft YaHei" Arial Helvetica SimHei sans-serif;
+}
+
+/********顶部******/
+header {
+	width:100%;
+	height: 80px;	
+	background-color: #F8F8F8;
+}
+
+#header_content{
+	width: 1040px;
+	height: 80px;
+	margin:0 auto;
+}
+
+/****顶部左侧***/
+header #header_left{
+	width: 440px;
+	height: 75px;
+	float: left;
+	/*border:1px solid #DDD;*/
+}
+	
+header #header_left #logo{
+	width: 200px;
+	height: 55px;
+	margin-top: 20px;
+	background: url("../images/logo.png") no-repeat;
+	/*border:1px solid #DDD;*/
+}
+
+/****顶部右侧*******/
+header #header_right{
+	float:left;
+	width:600px;
+	height: 75px;
+	/*border:1px solid #DDD;*/
+}
+header #header_right .blog_login {
+  width: 600px;
+  height: 20px;
+  margin-top: 55px;
+  /*border:1px solid #DDD;*/
+}
+header #header_right .blog_login a {
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  width: 120px;
+  height: 20px;
+  float: right;
+  color: #888;
+  font-size:13px;
+  /*border:1px solid #DDD;*/
+  margin-left: 10px;
+}
+header #header_right .blog_login #login:hover {
+  color: #F00;
+  text-decoration: underline;
+}
+header #header_right .blog_login #logout {
+  width: 50px;
+  height: 20px;
+  color: #F66;
+}
+header #header_right .blog_login #logout:hover {
+  color: #AAA;
+  text-decoration: underline;
+}
+/********顶部结束******/
+/********导航开始******/
+nav{
+	position: absolute;
+	top:80px;
+	width:100%;
+	height: 40px;
+	background-color: #F8F8F8;
+	border-bottom: 1px solid #DDD;
+}
+
+nav #navid{
+	width:1040px;
+	height: 36px;
+	margin:0 auto;
+    border-top: 5px solid #b2110e;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    position: relative;	
+}
+
+nav #navid ul {
+	display:block;
+	width:auto;
+	height: 40px;
+}
+
+nav #navid ul li{
+	float: left;
+	list-style: none;
+	height: 25px;
+	line-height: 25px;
+	padding: 5px 15px;
+	border-right:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+}
+
+nav #navid ul li.active{
+	background-color: #fff;
+	border-bottom:1px solid #fff;
+}
+
+nav #navid ul li a {
+	color: #000;
+	font-size: 16px;
+	font-weight: 500;
+}
+nav #navid ul li a:hover{
+	color: #F00;
+	text-decoration: underline;
+}
+nav .top_search {
+    display: inline;
+    float: right;
+    margin: 3px 5px 0 0;
+    /*border:1px solid #DDD;*/
+    position: absolute;
+    top: 0px;
+    left: 750px;
+}
+
+.search-input-area {
+    width: 278px;
+    height: 28px;
+    background: #fff;
+    border-color: #DDD;
+    border-left: 1px solid #DDD;
+    border-style: solid;
+    border-width: 1px;
+}
+.hidden {
+    display: none;
+}
+.top_search .textBox {
+    width: 256px;
+    color: #888888;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    border: 0;
+    text-indent: 3px;
+    font-size:14px;
+}
+.search-logo {
+    background: url(../images/search-logo.png) no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 28px;
+    width: 22px;
+    float: right;
+    border: 0;
+}
+/********导航结束******/
+
+/******图标字体******/
+.icomoon{
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.qq:after{
+	content: "\e901";
+	font-size:16px;
+}
+
+.weixin:after{
+	content: "\e900";
+	font-size:16px;
+}
+
+
+/**页码**/
+.page{
+	width: 780px;
+	height: 50px;
+	float: left;
+	text-align: center;
+	margin-top: 20px;
+	padding-top: 20px;
+	/*border:1px solid;*/
+}
+.page a {
+	padding: 5px 8px;
+	border: 1px solid #ccc;
+	color: #000;
+	margin-left: 5px;
+}
+.page strong{
+	padding: 5px 8px;
+	color: #fff;
+	border: 1px solid #ccc;
+	background: #3D97CB;
+	margin-left: 5px;
+}
+.page span{
+	margin-left: 5px;
+}
+
+
+/**工具条**/
+.toolbar{
+	 left:90.7%;
+	 top:55%;
+	 z-index:100;
+}
+
+.toolbar-btn{
+	border:1px solid #DDD;
+}
+
+.toolbar-btn:before{
+	background-color: #FFF;
+	color:#F33;
+}
+
+.toolbar-btn:after{
+	background-color: #E5DDD0;
+	color:#000;
+}

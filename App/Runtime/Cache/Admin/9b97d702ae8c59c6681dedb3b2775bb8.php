@@ -1,0 +1,279 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="博客，个性化，分享知识，互相学习" />
+    <meta name="description" content="这是我的后台管理页面，用户可以对自己的博客进行设置以及提交信息等。" />
+    <title>清风博客-后台管理主页</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/normalize.css" />
+    <link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__PUBLIC__/css/index.css" />
+    <script src="__PUBLIC__/js/jquery.js"></script>
+     <style type="text/css">
+        .filterinput{
+        background-color: rgba(249, 244, 244, .8);
+        border-radius:15px;
+        width:95%;
+        height:30px;
+        border:thin solid #AAA;
+        text-indent:1em;
+        color:#000;
+        }
+        #left-list a{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        -o-text-overflow:ellipsis;
+        white-space:nowrap;
+        width:100%;
+        }
+    </style>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            /*jQuery('#admin_right_content iframe').css({
+                'width': jQuery(window).width() - '250' - '25'
+            });
+
+            jQuery('#admin_content,#admin_left_content').css({
+                'height' : jQuery(window).height() - '115'
+            });
+
+            jQuery('#admin_right_content,#admin_right_content iframe').css({
+                'height' : jQuery(window).height() - '118'
+            });*/
+
+            jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+            
+        });
+
+        $(function(){   
+            //顶部导航切换
+            $("#left-list li").click(function(){
+                $("#left-list li.active").removeClass("active");
+                $(this).addClass("active");
+            })
+
+            //子孙级导航切换
+            $("#left-list ul.submenu li").click(function(){
+                $("#left-list ul.submenu li.activesub").removeClass("activesub");
+                $(this).addClass("activesub");
+            })   
+        })  
+
+
+     </script>  
+    
+</head>
+<body style="overflow-y:hidden">
+    <div id="container">
+        <!-- 头部开始 -->
+        <header>
+            <div id="header_content">
+        <!-- 头部左侧 -->
+            <div id="header_top">
+                <div id="logo"></div>
+                <div id="title">用户后台管理系统&nbsp(V1.0)</div>
+            </div>
+            <!-- 头部右侧 -->
+            <div id="header_bottom">
+                <div class="now_time">
+                    今天是：<?php echo date('Y-m-d',time());?>
+                    &nbsp&nbsp&nbsp
+                    <span id="cur_position"><a href="<?php echo U('Index/Index/index');?>">[前端入口]</a></span>
+                </div>
+                <div class="blog_login"><a  id="logout" href="<?php echo U(GROUP_NAME . '/Login/logout');?>"><i class="icon-remove-sign"></i>&nbsp注销</a><a  id="login" href="javascript:void(0);"><i class="icon-user"></i>&nbsp<?php echo (session('adminname')); ?></a></div>
+            </div>
+            </div>  
+        </header>
+        <!-- <span class="jquery-accordion-menu-label">12</span> -->
+        <!-- 头部结束 -->
+        <!-- 主内容开始  -->
+        <div id="admin_content"> 
+            <!-- 左边菜单栏开始 -->
+            <div id="admin_left_content">
+          	 <div id="jquery-accordion-menu" class="jquery-accordion-menu color">
+                <div class="jquery-accordion-menu-header" id="form"></div>
+                <ul id="left-list">        
+                    <li class="active"><a href="javascript:void(0);"><i class="icon-home"></i>首页管理</a>
+                        <ul class="submenu">
+                            <li class="activesub"  name="index" id="Index_index"><a href="javascript:void(0);"><i class="icon-home"></i>前端首页</a></li>
+                            <li name="Index/experience" id="Index_info"><a href="javascript:void(0);"><i class="icon-file"></i>发布前端信息</a></li>
+                        </ul>
+                    </li>
+
+                    <li name="copy"><a href="javascript:void(0);"><i class="icon-cog"></i>系统管理 </a>
+                        <ul class="submenu">
+                            <li class="activesub" name="Copy/index"><a href="javascript:void(0);"><i class="icon-wrench"></i>系统信息 </a></li>
+                            <li name="Copy/manage"><a href="javascript:void(0);"><i class="icon-key"></i>前端用户管理</a></li>
+                        </ul>
+                    </li>
+
+                    <li name="Admin"><a href="javascript:void(0);"><i class="icon-user"></i>用户管理 </a>
+                        <ul class="submenu">
+                            <li class="activesub" name="Admin/index"><a href="javascript:void(0);"><i class="icon-file-alt"></i>个人资料 </a></li>
+                            <li name="Admin/pwd"><a href="javascript:void(0);"><i class="icon-key"></i>密码修改 </a></li>
+                            <li name="Admin/register"><a href="javascript:void(0);"><i class="icon-user-md"></i>管理员注册</a></li>
+                        </ul>
+                    </li>
+
+                    <li name="Advice"><a href="javascript:void(0);"><i class="icon-envelope" style="font-size:14px;"></i>留言管理 </a>
+                        <ul class="submenu">
+                            <li class="activesub" name="Advice/index"><a href="javascript:void(0);"><i class="icon-eye-open"></i>查看留言</a></li>
+                        </ul>
+                    </li>
+
+                    <li name="Category"><a href="javascript:void(0);"><i class="icon-list-alt" style="font-size:14px;"></i>栏目管理 </a>
+                        <ul class="submenu">
+                            <li class="activesub" name="Category/check"><a href="javascript:void(0);"><i class="icon-eye-open"></i>查看栏目 </a></li>
+                            <li name="Category/add"><a href="javascript:void(0);"><i class="icon-plus-sign"></i>添加栏目 </a></li>
+                            <li name="Category/edit"><a href="javascript:void(0);"><i class="icon-edit"></i>编辑栏目 </a></li>
+                        </ul>
+                    </li> 
+
+                    <li name="Article"><a href="javascript:void(0);"><i class="icon-file"></i>博文管理 </a>
+                        <ul class="submenu">
+                            <li name="Article/check" class="activesub"><a href="javascript:void(0);"><i class="icon-align-justify"></i>博文列表 </a></li>
+                            <li name="Article/add"><a href="javascript:void(0);"><i class="icon-plus-sign"></i>添加博文</a></li>
+                            <li name="Article/edit"><a href="javascript:void(0);"><i class="icon-edit"></i>编辑博文 </a></li>
+                            <li name="Article/recycle_bin"><a href="javascript:void(0);"><i class="icon-trash"></i>回收站 </a></li>
+                        </ul>
+                    </li>
+
+                    <li name="Comment"><a href="javascript:void(0);"><i class="icon-comments"></i>评论管理 </a>
+                        <ul class="submenu">
+                            <li class="activesub" name="Comment/index"><a href="javascript:void(0);"><i class="icon-eye-open"></i>查看评论 </a></li>
+                            <li name="Comment/reply"><a href="javascript:void(0);"><i class="icon-bullhorn"></i>回复评论 </a></li>
+                        </ul>
+                    </li>
+
+                    <li name="Hobby"><a href="javascript:void(0);"><i class="icon-heart" style="font-size:14px;"></i>爱好管理 </a>
+                        <ul class="submenu">
+                            <li name="Hobby/show" class="activesub"><a href="javascript:void(0);"><i class="icon-desktop"></i>预览爱好</a></li>
+                            <li name="Hobby/add"><a href="javascript:void(0);"><i class="icon-plus-sign"></i>添加爱好</a></li>
+                            <li  name="Hobby/edit"><a href="javascript:void(0);"><i class="icon-list-ol"></i>编辑爱好</a></li>
+                        </ul>
+                    </li>           
+                </ul>
+            </div>
+        </div>
+        <!-- 左边菜单栏结束 -->
+
+        <!-- 右边内容开始 -->
+        <div id="admin_right_content">
+            <iframe src="__ROOT__/Index/Index/index" id="iframeid" frameborder="0" border="0"  scrolling="yes" name="iframe"></iframe>
+        </div>
+        <!-- 右边内容结束 -->
+        </div>      
+          <!--内容区域结束 -->
+     </div>
+     <script src="__PUBLIC__/js/jquery-accordion-menu.js" type="text/javascript"></script>
+     <script type="text/javascript">
+        (function($) {
+            $.expr[":"].Contains = function(a, i, m) {
+                return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+            };
+            function filterList(header, list) {
+                //@header 头部元素
+                //@list 无需列表
+                //创建一个搜素表单
+                var form = $("<form>").attr({
+                    "class":"filterform",
+                    action:"#"
+                }), input = $("<input>").attr({
+                    "class":"filterinput",
+                    type:"text"
+                });
+                $(form).append(input).appendTo(header);
+                $(input).change(function() {
+                    var filter = $(this).val();
+                    if (filter) {
+                        $matches = $(list).find("a:Contains(" + filter + ")").parent();
+                        $("li", list).not($matches).slideUp();
+                        $matches.slideDown();
+                    } else {
+                        $(list).find("li").slideDown();
+                    }
+                    return false;
+                }).keyup(function() {
+                    $(this).change();
+                });
+            }
+            $(function() {
+                filterList($("#form"), $("#left-list"));
+            });
+        })(jQuery); 
+
+        window.onload = function () {
+            var leftList = document.getElementById('left-list'),
+                iframeElement = document.getElementById('iframeid'),
+                firstRankList = getLi(leftList),
+                cur_position = document.getElementById('cur_position');
+
+            
+            var firNode =document.getElementById('Index_index'),
+                secNode =document.getElementById('Index_info');
+               
+            firNode.onclick = function(){
+                var url = "__ROOT__/Index/" + this.getAttribute('name');
+                iframeElement.setAttribute('src',url);
+            }
+            secNode.onclick = function(){
+                var url = "__ROOT__/Admin/Index/experience";
+                iframeElement.setAttribute('src',url);
+            }
+
+            //分级列表跳转的实现
+            for (var i = 1; i < firstRankList.length; i++) {
+                var childNodes = firstRankList[i].childNodes;
+                if(childNodes.length == 1){
+                    firstRankList[i].onclick = function(){
+                        var url = "__ROOT__/Admin/" + this.getAttribute('name') +"/index";
+                        iframeElement.setAttribute('src',url);
+                    }
+                }
+                else{
+                    for(var j = 0;j < childNodes.length; j++){
+                        if(childNodes[j].nodeName == "UL"){
+                            var secondRankList = getLi(childNodes[j]);
+                            for(var k = 0;k < secondRankList.length; k++){
+                                var subNodes = secondRankList[k].childNodes;
+                                if (subNodes.length == 1) {
+                                    secondRankList[k].onclick = function(){
+                                        var url = "__ROOT__/Admin/" + this.getAttribute('name');
+                                        iframeElement.setAttribute('src',url);
+                                    }
+                                }
+                                else{
+                                    for(var l = 0 ; l < subNodes.length ; l++){
+                                        if (subNodes[l].nodeName == "UL") {
+                                            var thirdRankList = getLi(subNodes[l]);
+                                            for(var m = 0; m < thirdRankList.length; m++){
+                                                thirdRankList[m].onclick = function(){
+                                                    var url = "__ROOT__/Admin/" + this.getAttribute('name');
+                                                    iframeElement.setAttribute('src',url);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //获取列表元素的直接子节点
+        var getLi = function (parent) {
+            var aChild = parent.childNodes;
+            var aResult = [];
+            for(var i = 0,len = aChild.length; i < len; i++ ){
+                if(aChild[i].nodeName == 'LI'){
+                aResult.push(aChild[i]);
+                }
+            }
+            return aResult;
+        }
+
+    </script>
+</body>
+</html>

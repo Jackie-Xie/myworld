@@ -1,0 +1,145 @@
+  <include file="./App/Modules/Index/Tpl/common/header.html" />
+  <!-- 内容区域开始 -->
+  <div class="about-content">
+	<!-- 发布内容区域 -->
+	<div id="arc">
+		<div class="arc_left_box">
+			<div id="rank">
+				<span>博客等级</span>
+				<a href="" class="level" target="_blank">1</a>
+				<span>积分</span>
+				<a href="" class="level" target="_blank">10</a>
+			</div>
+			<div class="tittle"><span>基本资料</span><a href="#" class="edit" target="_blank">编辑</a></div>
+			<table class="table">
+			<tr>
+				<td class="td_first">昵称：</td>
+				<td>{$info.username}</td>
+			</tr>
+			<tr>
+				<td class="td_first">性别：</td>
+				<td>{$info['sex'] ? '女':'男'}</td>
+			</tr>
+			<tr>
+				<td class="td_first">生日：</td>
+				<td>{$info.birthday}&nbsp&nbsp{$info.constellation}&nbsp&nbsp{$info.animalsign}</td>
+			</tr>
+			<tr>
+				<td class="td_first">故乡：</td>
+				<td>{$info.hometown}</td>
+			</tr>
+			<tr>
+				<td class="td_first">现居地址：</td>
+				<td>{$info.address}</td>
+			</tr>
+			<tr>
+				<td class="td_first">自我介绍：</td>
+				<td><span>{$info.introduce}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">近期梦想：</td>
+				<td><span>{$info.dream}</span></td>
+			</tr>
+			</table>
+
+
+
+			<div class="tittle"><span>个人信息</span><a href="#" class="edit" target="_blank">编辑</a></div>
+			<table class="table">
+			<tr>
+				<td class="td_first">学位：</td>
+				<td>{$info.degree}</td>
+			</tr>
+			<tr>
+				<td class="td_first">职业：</td>
+				<td>{$info.career}</td>
+			</tr>
+			<tr>
+				<td class="td_first">婚姻状况：</td>
+				<td>{$info['ismarried']?'已婚':'未婚'}</td>
+			</tr>
+			<tr>
+				<td class="td_first">专业特长：</td>
+				<td><span>{$info.majortag}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">兴趣爱好：</td>
+				<td><span>{$info.like}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">喜欢的运动：</td>
+				<td><span>{$info.sports}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">喜欢的音乐：</td>
+				<td><span>{$info.musics}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">喜欢的电影：</td>
+				<td><span>{$info.films}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">喜欢的书籍：</td>
+				<td><span>{$info.books}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">喜欢的明星：</td>
+				<td><span>{$info.superstars}</span></td>
+			</tr>
+			</table>
+
+
+			<div class="tittle"><span>个人学历</span><a href="#" class="edit" target="_blank">编辑</a></div>
+			<table class="table">
+			<tr>
+				<td class="td_first">本科：</td>
+				<td><span>{$info.college_life}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">高中：</td>
+				<td><span>{$info.senior_life}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">初中：</td>
+				<td><span>{$info.middle_life}</span></td>
+			</tr>
+			</table>
+
+
+			<div class="tittle"><span>联系方式</span><a href="#" class="edit" target="_blank">编辑</a></div>
+			<table class="table">
+			<tr>
+				<td class="td_first">QQ：</td>
+				<td>{$info.qq}</td>
+			</tr>
+			<tr>
+				<td class="td_first">E-Mail：</td>
+				<td>{$info.email}</td>
+			</tr>
+			<tr>
+				<td class="td_first">手机号码：</td>
+				<td>{$info.mobile}</td>
+			</tr>
+			<tr>
+				<td class="td_first">固定电话：</td>
+				<td>{$info.telephone}</td>
+			</tr>
+			<tr>
+				<td class="td_first">联系地址：</td>
+				<td><span>{$info.contactaddress}</span></td>
+			</tr>
+			<tr>
+				<td class="td_first">邮政编码：</td>
+				<td><span>{$info.zipcode}</span></td>
+			</tr>
+			</table>
+		</div>
+		<!-- 左侧区域结束 -->
+		<!-- 右侧区域开始 -->
+		<include file="./App/Modules/Index/Tpl/common/right_side.html" />
+		<!-- 右侧区域结束 -->
+	</div>
+	<!-- 发布内容区域结束 -->
+ </div>
+  <!--内容区域结束 -->
+<include file="./App/Modules/Index/Tpl/common/footer.html" />

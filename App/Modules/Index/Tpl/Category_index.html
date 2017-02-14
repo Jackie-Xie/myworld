@@ -1,0 +1,42 @@
+  <include file="./App/Modules/Index/Tpl/common/header.html" />
+  <!-- 内容区域开始 -->
+  <div id="content">
+	<!-- 发布内容区域 -->
+	<div id="arc">
+		<!-- 左侧区域 -->
+		<div class="arc_left_box">
+			<p class="arc_show">
+				博文
+				<b>栏目：<span>{$cate.cname}</span></b>
+			</p>
+			<foreach name='select' item='blogs'>
+				<div class="arc_left">
+					<div class="arc_left_date">
+						<p></p>
+						<dl>
+							<dd>{$blogs.time|date="Y",###}</dd>
+							<dt>{$blogs.time|date="m-d",###}</dt>
+						</dl>
+					</div>
+					<div class="arc_left_content">
+						<a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $blogs['aid']))}" class="arc_tittle">{$blogs.title}</a>
+						<a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $blogs['aid']))}"><img src="{$blogs.thumb}" alt="缩略图" /></a>
+						<div class="arc_des">{$blogs.summary}</div>
+						<a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $blogs['aid']))}" class="arc_more">阅读全文>></a>
+					</div>
+				</div>
+			</foreach>
+			<div class="manu page">
+				{$page}
+			</div>
+		</div>
+		<!-- 左侧区域结束 -->
+		<!-- 右侧区域开始 -->
+		<include file="./App/Modules/Index/Tpl/common/right_side.html" />
+		<!-- 右侧区域结束 -->
+	</div>
+	<!-- 发布内容区域结束 -->
+ </div>
+  <!--内容区域结束 -->
+  <include file="./App/Modules/Index/Tpl/common/footer.html" />
+	

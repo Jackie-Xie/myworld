@@ -1,0 +1,184 @@
+@import url("./reset.css");
+
+li {
+	list-style-type:none;
+}
+a {
+	text-decoration:none;
+	color:blue;
+}
+
+iframe {
+	width:100%;
+	height:100%;
+	border:none;
+	overflow-x: hidden;
+	overflow: auto;
+}
+body{
+	padding: 30px;
+	background:#F8F8F8; 
+}
+
+.table-section{
+	width:100%;
+}
+
+.table-section p{
+	padding-left: 20px;
+	font-size: 16px;
+	font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+	color: #2C3134;
+}
+
+/*表格样式*/
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin-bottom: 30px;
+}
+.mc-table{
+	width: 100%;
+	/*table-layout:fixed;*/
+ 	max-width: 100%;
+	margin-top: 10px;
+	font-size: 12px;
+	color: #2C3134;
+	border:1px solid #7C8693;
+}
+
+.mc-table > thead > tr > th,
+.mc-table > tbody > tr > th,
+.mc-table > tfoot > tr > th,
+.mc-table > thead > tr > td,
+.mc-table > tbody > tr > td,
+.mc-table > tfoot > tr > td {
+  padding: 8px;
+  height: 20px;
+  line-height: 20px;
+  text-align: left;
+  /*word-wrap:break-word;*/
+  /*border:1px solid;*/
+}
+
+.mc-table > thead > tr > th.limit,
+.mc-table > tbody > tr > th.limit,
+.mc-table > tfoot > tr > th.limit,
+.mc-table > thead > tr > td.limit,
+.mc-table > tbody > tr > td.limit,
+.mc-table > tfoot > tr > td.limit{
+	max-width: 50px;
+}  
+	
+.mc-table > thead > tr > th{
+	height: 19px;
+  	line-height: 19px;
+	background: #EAF0F8;
+}
+
+.mc-table > tbody > tr > td:first-child,.mc-table > thead > tr > th:first-child{
+	padding-right: 5px;
+	text-align: center;
+}
+
+.mc-table > tbody > tr > td:last-child,.mc-table > thead > tr > th:last-child{
+	text-align: left;
+}
+
+.mc-table > tbody > tr > td.center,.mc-table > thead > tr > th.center{
+	text-align: center;
+}
+
+.mc-table-striped > tbody > tr:nth-child(odd) > td{
+	background: transparent;
+}
+
+.mc-table-striped > tbody > tr:nth-child(even) > td{
+	background: #EAF0F8;
+}
+
+.mc-table-hover > tbody > tr:hover > td{
+  background-color: rgba(234,240,248,.7);
+}
+
+.mc-table > tbody >tr > td > a{
+	display: inline-block;
+	text-decoration: none;
+}
+
+.mc-table > tbody >tr > td > a:focus {
+	outline:none;
+	-moz-outline:none;
+}
+
+.mc-table > tbody >tr > td > a span{
+	display: inline-block;
+	width: 12px;
+}
+
+.mc-table > tbody > tr > td .delete{
+	height: 12px;
+	background: url(../../images/delete.png) no-repeat center center;
+}
+
+.mc-table > tbody > tr > td > a .edit{
+	margin-left: 15px;
+	height: 11px;
+}
+
+.mc-table > tbody > tr > td > a .edit-disabled{
+	background: url(../../images/edit-disabled.png) no-repeat center center;
+}
+
+.mc-table > tbody > tr > td > a:hover .edit-disabled,.mc-table > tbody > tr > td > a .edit-active{
+	background: url(../../images/edit-active.png) no-repeat center center;
+}
+
+.mc-table-prev{
+	width: 980px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.mc-table .table-head{
+	width: 100px;
+	padding-right: 10px;
+}
+
+.w1f{
+	min-width: 15px;
+	max-width: 25px;
+} 
+
+.w2f{
+	min-width: 28px;
+	max-width: 38px;
+} 
+
+.w3f{
+	min-width: 40px;
+	max-width: 50px;
+} 
+
+.w4f{
+	min-width: 52px;
+	max-width: 62px;
+} 
+
+.w5f{
+	min-width: 60px;
+	max-width: 70px;
+} 
+
+.w6f{
+	min-width: 75px;
+	max-width: 85px;
+}
+
+.w7f{
+	min-width: 105px;
+	max-width: 125px;
+}
+
+

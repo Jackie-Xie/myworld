@@ -1,0 +1,63 @@
+  <include file="./App/Modules/Index/Tpl/common/header.html" />
+  <!-- 内容区域开始 -->
+  	<div id="content">
+	<!-- 发布内容区域 -->
+	<div id="arc">
+		<!-- 左侧区域 -->
+		<div class="arc_left_box">
+			<p class="arc_show">我的博客</p>
+				<!-- 轮播区域 -->
+			<div id="foucs_photo_container">
+			 <div id="foucs_photo">
+				<div id="list" style="left:-720px;">
+			        <img src="__PUBLIC__/images/5.jpg" alt="1"/>
+			        <img src="__PUBLIC__/images/1.jpg" alt="1"/>
+			        <img src="__PUBLIC__/images/2.jpg" alt="2"/>
+			        <img src="__PUBLIC__/images/3.jpg" alt="3"/>
+			        <img src="__PUBLIC__/images/4.jpg" alt="4"/>
+			        <img src="__PUBLIC__/images/5.jpg" alt="5"/>
+			        <img src="__PUBLIC__/images/1.jpg" alt="5"/>
+			    </div>
+			    <div id="buttons">
+			        <span index="1" class="on"></span>
+			        <span index="2"></span>
+			        <span index="3"></span>
+			        <span index="4"></span>
+			        <span index="5"></span>
+			    </div>
+			    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+			    <a href="javascript:;" id="next" class="arrow">&gt;</a>		
+			 </div>
+		    </div>
+			<!-- 轮播区域结束 -->
+			<p class="arc_show">博文</p>
+			<foreach name='select' item='blogs'>
+				<div class="arc_left">
+					<div class="arc_left_date">
+						<p></p>
+						<dl>
+							<dd>{$blogs.time|date="Y",###}</dd>
+							<dt>{$blogs.time|date="m-d",###}</dt>
+						</dl>
+					</div>
+					<div class="arc_left_content">
+						<a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $blogs['aid']))}" class="arc_tittle">{$blogs.title}</a>
+						<a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $blogs['aid']))}"><img src="{$blogs.thumb}" alt="缩略图" /></a>
+						<div class="arc_des">{$blogs.summary}</div>
+						<a href="{:U(GROUP_NAME . '/Article/index',array('aid'=> $blogs['aid']))}" class="arc_more">阅读全文>></a>
+					</div>
+				</div>
+			</foreach>
+			<div class="manu page">
+				{$page}
+			</div>
+		</div>
+		<!-- 左侧区域结束 -->
+		<!-- 右侧区域开始 -->
+		<include file="./App/Modules/Index/Tpl/common/right_side.html" />
+		<!-- 右侧区域结束 -->
+	</div>
+	<!-- 发布内容区域结束 -->
+ </div>
+  <!--内容区域结束 -->
+<include file="./App/Modules/Index/Tpl/common/footer.html" />
